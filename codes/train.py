@@ -50,6 +50,7 @@ class Trainer:
             resume_state = torch.load(opt['path']['resume_state'], map_location=map_cuda_to_correct_device)
         else:
             resume_state = None
+        print(f'\n\nXXXX: {opt=}')
 
         #### mkdir and loggers
         if self.rank <= 0:  # normal training (self.rank -1) OR distributed training (self.rank 0)
